@@ -29,13 +29,19 @@
 
 ## items テーブル
 
-| Column            | Type       | Options                        |
-| ----------------- | ---------- | ------------------------------ |
-| img               | text       | null: false                    |
-| name              | string     | null: false                    |
-| message           | text       | null: false                    |
-| price             | integer    | null: false                    |
-| user              | references | null: false, foreign_key: true |
+| Column                              | Type       | Options                        |
+| ----------------------------------- | ---------- | ------------------------------ |
+| img                                 | text       | null: false                    |
+| name                                | string     | null: false                    |
+| message                             | text       | null: false                    |
+| price                               | integer    | null: false                    |
+| user                                | references | null: false, foreign_key: true |
+| category_id(active_hash)            | integer    | null: false                    |
+| sales_status_id(active_hash)        | integer    | null: false                    |
+| shipping_fee_status_id(active_hash) | integer    | null: false                    |
+| prefectures_id(active_hash)         | integer    | null: false                    |
+| scheduled_delively_id(active_hash)  | integer    | null: false                    |
+
 
 ### Association
 
@@ -57,12 +63,13 @@
 
 ## addresses テーブル
 
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| potal_code       | string     | null: false                    |
-| manicipalities   | string     | null: false                    |
-| address          | string     | null: false                    |
-| building_name    | string     | null: false                    |
-| phone_number     | string     | null: false                    |
+| Column                      | Type       | Options     |
+| --------------------------- | ---------- | ----------- |
+| postal_code                 | string     | null: false |
+| manicipalities              | string     | null: false |
+| address                     | string     | null: false |
+| building_name               | string     |             |
+| phone_number                | string     | null: false |
+| prefectures_id(active_hash) | integer    | null: false |
 
-- belongs_to :purchases
+- belongs_to :purchas
