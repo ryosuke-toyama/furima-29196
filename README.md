@@ -72,4 +72,4 @@
 | phone_number                | string     | null: false |
 | prefectures_id(active_hash) | integer    | null: false |
 
-- belongs_to :purchas
+- belongs_to :purchase
