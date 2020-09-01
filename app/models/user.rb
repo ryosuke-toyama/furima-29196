@@ -15,12 +15,10 @@ class User < ApplicationRecord
   end
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
-  FIRST_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
-  validates_format_of :first_name, with: FIRST_NAME_REGEX, message: 'Full-width characters'
-  FAMILY_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
-  validates_format_of :family_name, with: FAMILY_NAME_REGEX, message: 'Full-width characters'
-  FIRST_NAME_KANA_REGEX = /\A[ァ-ン]+\z/.freeze
-  validates_format_of :first_name_kana, with: FIRST_NAME_KANA_REGEX, message: 'Full-width katakana characters'
-  FAMILY_NAME_KANA_REGEX = /\A[ァ-ン]+\z/.freeze
-  validates_format_of :family_name_kana, with: FAMILY_NAME_KANA_REGEX, message: 'Full-width katakana characters'
+  NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
+  validates_format_of :first_name, with: NAME_REGEX, message: 'Full-width characters'
+  validates_format_of :family_name, with: NAME_REGEX, message: 'Full-width characters'
+  NAME_KANA_REGEX = /\A[ァ-ン]+\z/.freeze
+  validates_format_of :first_name_kana, with: NAME_KANA_REGEX, message: 'Full-width katakana characters'
+  validates_format_of :family_name_kana, with: NAME_KANA_REGEX, message: 'Full-width katakana characters'
 end
