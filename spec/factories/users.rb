@@ -8,8 +8,8 @@ FactoryBot.define do
     password_confirmation{password}
     family_name{Faker::Name.last_name}
     first_name{Faker::Name.first_name}
-    family_name_kana{Faker::Name.last_name}
-    first_name_kana{Faker::Name.first_name}
+    family_name_kana{"セイ"}
+    first_name_kana{"メイ"}
     birthday{Faker::Date.between(from: '1935-01-01', to: '2005-01-01')}
   end
 end
