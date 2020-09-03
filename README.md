@@ -29,18 +29,18 @@
 
 ## items テーブル
 
-| Column                              | Type       | Options                        |
-| ----------------------------------- | ---------- | ------------------------------ |
-| img                                 | text       | null: false                    |
-| name                                | string     | null: false                    |
-| message                             | text       | null: false                    |
-| price                               | integer    | null: false                    |
-| user                                | references | null: false, foreign_key: true |
-| category_id(active_hash)            | integer    | null: false                    |
-| sales_status_id(active_hash)        | integer    | null: false                    |
-| shipping_fee_status_id(active_hash) | integer    | null: false                    |
-| prefectures_id(active_hash)         | integer    | null: false                    |
-| scheduled_delively_id(active_hash)  | integer    | null: false                    |
+| Column                              | Type       | Options      |
+| ----------------------------------- | ---------- | -------------|
+| img                                 | text       | null: false  |
+| name                                | string     | null: false  |
+| message                             | text       | null: false  |
+| price                               | integer    | null: false  |
+| user                                | integer    | null: false  |
+| category_id(active_hash)            | integer    | null: false  |
+| sales_status_id(active_hash)        | integer    | null: false  |
+| shipping_fee_id(active_hash)        | integer    | null: false  |
+| prefecture_id(active_hash)          | integer    | null: false  |
+| scheduled_delively_id(active_hash)  | integer    | null: false  |
 
 
 ### Association
