@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
-  
+
   def edit
     @item = Item.find(params[:id])
   end
@@ -33,6 +33,16 @@ class ItemsController < ApplicationController
       redirect_to item_path(item)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    if item.destroy
+      redirect_to items_path
+    else
+      render :show
     end
   end
 
