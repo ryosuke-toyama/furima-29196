@@ -7,9 +7,9 @@ class OrderAddress
   validates :prefectures_id, numericality: { other_than: 0, message: 'Select' }
 
   POSTAL_CODE_REGEX =/\A\d{3}[-]\d{4}\z/.freeze
-  validates_format_of :postal_code, with: POSTAL_CODE_REGEX, message: 'Include both letters and numbers'
+  validates_format_of :postal_code, with: POSTAL_CODE_REGEX, message: 'Input correctly'
   PHONE_NUMBER_REGEX =/\A\d{11}\z/.freeze
-  validates_format_of :phone_number, with: PHONE_NUMBER_REGEX, message: 'Include both letters and numbers'
+  validates_format_of :phone_number, with: PHONE_NUMBER_REGEX, message: 'Input correctly'
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
