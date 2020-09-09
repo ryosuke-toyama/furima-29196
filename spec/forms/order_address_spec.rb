@@ -16,12 +16,12 @@ RSpec.describe OrderAddress, type: :model do
     it '郵便番号に-(ハイフン)がないと登録できない' do
       @order_address.postal_code = '1111111'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal code Input correctly")
+      expect(@order_address.errors.full_messages).to include('Postal code Input correctly')
     end
     it '都道府県がないと登録できない' do
       @order_address.prefectures_id = 0
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Prefectures Select")
+      expect(@order_address.errors.full_messages).to include('Prefectures Select')
     end
     it '市区町村がないと登録できない' do
       @order_address.city = ''
@@ -41,8 +41,7 @@ RSpec.describe OrderAddress, type: :model do
     it '電話番号が12桁以上だと登録できない' do
       @order_address.phone_number = '111111111111'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number Input correctly")
+      expect(@order_address.errors.full_messages).to include('Phone number Input correctly')
     end
   end
-
 end
