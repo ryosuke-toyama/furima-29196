@@ -2,7 +2,7 @@ class OrderAddress
   include ActiveModel::Model
   attr_accessor :token, :user_id, :item_id, :postal_code, :prefectures_id, :city, :address, :building_name, :phone_number, :order_id
 
-  validates :postal_code, :city, :address, :phone_number, :prefectures_id, presence: true
+  validates :token, :postal_code, :city, :address, :phone_number, :prefectures_id, presence: true
   validates :prefectures_id, numericality: { other_than: 0, message: 'Select' }
 
   POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
