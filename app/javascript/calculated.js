@@ -1,3 +1,4 @@
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 function calculation(){
   const item_price = document.getElementById("item-price")
   item_price.addEventListener('input', function() {
@@ -9,3 +10,4 @@ function calculation(){
   });
 };
 setInterval(calculation, 1000);
+};
