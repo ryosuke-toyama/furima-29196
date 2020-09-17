@@ -1,15 +1,16 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all.order('created_at DESC')
+    binding.pry
   end
 
   def new
     redirect_to new_user_session_path unless user_signed_in?
-    @item = Item.new
+    @item = ItemTag.new
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = ItemTag.new(item_params)
     @item.sold = false
     if @item.save
       redirect_to root_path
@@ -49,6 +50,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :message, :price, :category_id, :sales_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delively_id, images: []).merge(user_id: current_user.id)
+    params.require(:item_tag).permit(:name, :message, :price, :category_id, :sales_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delively_id, :tag_name, images: []).merge(user_id: current_user.id, item_id: params[:item_id], tag_id: params[:tag_id])
   end
 end

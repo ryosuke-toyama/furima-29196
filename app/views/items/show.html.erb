@@ -21,7 +21,10 @@
         ¥ <%= @item.price %>
       </span>
       <span class="item-postage">
-        <%= @item.shipping_fee.name%>
+        <%= @item.shipping_fee.name%><br>
+        <% @item.tags.each do |tag| %>
+        #<%= tag.tag_name %>
+        <% end %>
       </span>
     </div>
 

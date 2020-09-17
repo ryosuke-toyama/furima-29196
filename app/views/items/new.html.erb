@@ -81,6 +81,13 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:scheduled_delively_id, ScheduledDelively.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <div class="weight-bold-text">
+          タグ
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="tag-field", id='tag-field'>
+          <%= f.text_field :tag_name, class:"input-tag" %>
+        </div>
       </div>
     </div>
     <%# /配送について %>
