@@ -7,6 +7,6 @@ FactoryBot.define do
     address { Faker::Address.street_address }
     building_name { Faker::Address.building_number }
     phone_number { Faker::Number.number(digits: 11) }
-    token {Faker::Internet.password}
+    token { Faker::Internet.password }
   end
 end

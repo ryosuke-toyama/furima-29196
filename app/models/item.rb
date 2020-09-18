@@ -9,6 +9,4 @@ class Item < ApplicationRecord
   belongs_to_active_hash :scheduled_delively
   has_many :item_tag_relations, dependent: :destroy
   has_many :tags, through: :item_tag_relations, dependent: :destroy
-
-  
 end

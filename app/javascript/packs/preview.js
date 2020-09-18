@@ -11,7 +11,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       blobImage.setAttribute('style', 'width: 150px;');
       const inputHTML = document.createElement('input')
       inputHTML.setAttribute('id', `item_image_${imageElementNum}`)
-      inputHTML.setAttribute('name', 'item[images][]')
+      inputHTML.setAttribute('name', 'item_tag[images][]')
       inputHTML.setAttribute('type', 'file')
       clickUpload.appendChild(imageElement);
       imageElement.appendChild(blobImage);
