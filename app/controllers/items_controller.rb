@@ -11,13 +11,12 @@ class ItemsController < ApplicationController
   def create
     @item = ItemTag.new(item_tag_params)
     @item.sold = false
-    if @item.valid? 
+    if @item.valid?
       @item.save
       redirect_to root_path
     else
       render :new
     end
-
   end
 
   def show
@@ -47,11 +46,13 @@ class ItemsController < ApplicationController
       render :show
     end
   end
+
   private
 
   def item_tag_params
     params.require(:item_tag).permit(:name, :message, :price, :category_id, :sales_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delively_id, :tag_name, images: []).merge(user_id: current_user.id, item_id: params[:item_id], tag_id: params[:tag_id])
   end
+
   def item_params
     params.require(:item).permit(:name, :message, :price, :category_id, :sales_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delively_id, images: [])
   end

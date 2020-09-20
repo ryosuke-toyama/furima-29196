@@ -18,6 +18,7 @@ class ItemTag
     item_tag_relation.tag_id = tag.id
     item_tag_relation.save
   end
+
   def update
     item = Item.create(name: name, message: message, price: price, category_id: category_id, sales_status_id: sales_status_id, shipping_fee_id: shipping_fee_id, prefecture_id: prefecture_id, scheduled_delively_id: scheduled_delively_id, images: images, sold: sold, user_id: user_id)
     tag = Tag.where(tag_name: tag_name).first_or_initialize

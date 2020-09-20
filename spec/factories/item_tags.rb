@@ -9,6 +9,6 @@ FactoryBot.define do
     shipping_fee_id { 1 }
     prefecture_id { 1 }
     scheduled_delively_id { 1 }
-    tag_name {Faker::Lorem.sentence}
+    tag_name { Faker::Lorem.sentence }
   end
 end

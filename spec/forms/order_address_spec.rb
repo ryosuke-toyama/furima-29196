@@ -15,7 +15,7 @@ RSpec.describe OrderAddress, type: :model do
     it '郵便番号がないと購入できない' do
       @order_address.postal_code = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("郵便番号を入力してください")
+      expect(@order_address.errors.full_messages).to include('郵便番号を入力してください')
     end
     it '郵便番号に-(ハイフン)がないと購入できない' do
       @order_address.postal_code = '1111111'
@@ -30,17 +30,17 @@ RSpec.describe OrderAddress, type: :model do
     it '市区町村がないと購入できない' do
       @order_address.city = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("市町村を入力してください")
+      expect(@order_address.errors.full_messages).to include('市町村を入力してください')
     end
     it '番地がないと購入できない' do
       @order_address.address = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("番地を入力してください")
+      expect(@order_address.errors.full_messages).to include('番地を入力してください')
     end
     it '電話番号がないと購入できない' do
       @order_address.phone_number = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("電話番号を入力してください")
+      expect(@order_address.errors.full_messages).to include('電話番号を入力してください')
     end
     it '電話番号が12桁以上だと購入できない' do
       @order_address.phone_number = '111111111111'
@@ -50,7 +50,7 @@ RSpec.describe OrderAddress, type: :model do
     it 'トークンが発行されないと購入できない' do
       @order_address.token = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("クレジットカード情報を入力してください")
+      expect(@order_address.errors.full_messages).to include('クレジットカード情報を入力してください')
     end
   end
 end

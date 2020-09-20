@@ -10,17 +10,17 @@ RSpec.describe ItemTag, type: :model do
     it '画像がないと登録できない' do
       @item.images = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("画像を入力してください")
+      expect(@item.errors.full_messages).to include('画像を入力してください')
     end
     it '商品名がないと登録できない' do
       @item.name = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("商品名を入力してください")
+      expect(@item.errors.full_messages).to include('商品名を入力してください')
     end
     it '商品の説明がないと登録できない' do
       @item.message = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("商品の説明を入力してください")
+      expect(@item.errors.full_messages).to include('商品の説明を入力してください')
     end
     it 'カテゴリーの情報がないと登録できない' do
       @item.category_id = 0
@@ -50,7 +50,7 @@ RSpec.describe ItemTag, type: :model do
     it '価格についての情報がないと登録できない' do
       @item.price = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("価格を入力してください")
+      expect(@item.errors.full_messages).to include('価格を入力してください')
     end
     it '価格の範囲が300より低いと登録できない' do
       @item.price = 299
