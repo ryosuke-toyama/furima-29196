@@ -11,11 +11,13 @@ class ItemsController < ApplicationController
   def create
     @item = ItemTag.new(item_params)
     @item.sold = false
-    if @item.save
+    if @item.valid? 
+      @item.save
       redirect_to root_path
     else
       render :new
     end
+
   end
 
   def show
@@ -45,7 +47,6 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-
   private
 
   def item_params

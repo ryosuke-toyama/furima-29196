@@ -6,9 +6,9 @@ class OrderAddress
   validates :prefectures_id, numericality: { other_than: 0, message: 'を選択してください' }
 
   POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
-  validates_format_of :postal_code, with: POSTAL_CODE_REGEX, message: 'ハイフン(-)を含めた7桁で入力してください'
+  validates_format_of :postal_code, with: POSTAL_CODE_REGEX, message: 'はハイフン(-)を含めた7桁で入力してください'
   PHONE_NUMBER_REGEX = /\A\d{11}\z/.freeze
-  validates_format_of :phone_number, with: PHONE_NUMBER_REGEX, message: '数字のみの11桁で入力してください'
+  validates_format_of :phone_number, with: PHONE_NUMBER_REGEX, message: 'は数字のみの11桁で入力してください'
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
