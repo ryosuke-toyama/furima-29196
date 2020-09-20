@@ -25,30 +25,31 @@
 ### Association
 
 - has_many :items
-- has_many :order
+- has_many :orders
 
 ## items テーブル
 
 | Column                              | Type       | Options      |
 | ----------------------------------- | ---------- | -------------|
-| img                                 | text       | null: false  |
 | name                                | string     | null: false  |
 | message                             | text       | null: false  |
 | price                               | integer    | null: false  |
-| user                                | integer    | null: false  |
+| user_id                             | integer    | null: false  |
 | category_id(active_hash)            | integer    | null: false  |
 | sales_status_id(active_hash)        | integer    | null: false  |
 | shipping_fee_id(active_hash)        | integer    | null: false  |
 | prefecture_id(active_hash)          | integer    | null: false  |
 | scheduled_delively_id(active_hash)  | integer    | null: false  |
+| sold                                | boolean    | null: false  |
 
 
 ### Association
 
 - belongs_to :user
 - has_one :order
+- has_many :tags
 
-## order テーブル
+## orders テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -71,5 +72,25 @@
 | building_name               | string     |             |
 | phone_number                | string     | null: false |
 | prefectures_id(active_hash) | integer    | null: false |
+| order_id                    | integer    | null: false |
 
 - belongs_to :order
+
+## tags テーブル
+
+| Column                      | Type       | Options                       |
+| --------------------------- | ---------- | ----------------------------- |
+| tag_name                    | string     | null: false , uniqueness: true|
+
+- has_many :items
+
+## item_tag_relations テーブル 
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| item             | references | null: false, foreign_key: true |
+| tag              | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :tag
